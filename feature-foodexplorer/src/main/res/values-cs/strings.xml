@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_bar_hint">Hledat všechno</string>
+    <string name="generic_error">Hups! Něco se pokazilo</string>
+    <string name="nothing_found">Nic se nenašlo</string>
+</resources>

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt.gradle)
 }
 
 android {
@@ -17,11 +18,11 @@ android {
     }
 
     buildFeatures {
-        compose = true
         aidl = false
         buildConfig = false
         renderScript = false
         shaders = false
+        viewBinding = true
     }
 
     composeOptions {
@@ -39,28 +40,29 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-data"))
     implementation(project(":core-ui"))
     androidTestImplementation(project(":core-testing"))
 
     // Core Android dependencies
-    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.recyclerview)
+
+    implementation(libs.kotlinx.coroutines.android)
 
     // Arch Components
-    implementation(libs.androidx.lifecycle.runtime.compose)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
-    // Compose
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material3)
-    // Tooling
-    debugImplementation(libs.androidx.compose.ui.tooling)
-    // Instrumented tests
-    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    // View
+    implementation (libs.viewbindingpropertydelegate.noreflection)
+    implementation (libs.androidx.fragment.ktx)
+    implementation(libs.android.material)
+    implementation(libs.coil)
+    implementation(libs.coil.transformations)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.tikxml.annotation)
+    implementation(libs.tikxml.core)
+    kapt(libs.tikxml.processor)
 
     // Hilt Dependency Injection
     implementation(libs.hilt.android)

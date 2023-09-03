@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_bar_hint">Search everything</string>
+    <string name="generic_error">Oops! Something went wrong</string>
+    <string name="nothing_found">Nothing found</string>
+</resources>

@@ -16,7 +16,6 @@ android {
     }
 
     buildFeatures {
-        compose = true
         aidl = false
         buildConfig = false
         renderScript = false
@@ -43,6 +42,9 @@ dependencies {
 
     // Core Android dependencies
     implementation(libs.androidx.core.ktx)
+
+    // View
+    implementation(libs.android.material)
 
     // Compose
     implementation(libs.androidx.compose.ui)

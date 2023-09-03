@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.CaloricTablesLiteApplication" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/ctl_theme_dark_primary</item>
+        <item name="colorOnPrimary">@color/ctl_theme_dark_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/ctl_theme_dark_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/ctl_theme_dark_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/ctl_theme_dark_secondary</item>
+        <item name="colorOnSecondary">@color/ctl_theme_dark_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/ctl_theme_dark_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/ctl_theme_dark_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/ctl_theme_dark_tertiary</item>
+        <item name="colorOnTertiary">@color/ctl_theme_dark_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/ctl_theme_dark_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/ctl_theme_dark_onTertiaryContainer</item>
+        <item name="colorError">@color/ctl_theme_dark_error</item>
+        <item name="colorErrorContainer">@color/ctl_theme_dark_errorContainer</item>
+        <item name="colorOnError">@color/ctl_theme_dark_onError</item>
+        <item name="colorOnErrorContainer">@color/ctl_theme_dark_onErrorContainer</item>
+        <item name="android:colorBackground">@color/ctl_theme_dark_background</item>
+        <item name="colorOnBackground">@color/ctl_theme_dark_onBackground</item>
+        <item name="colorSurface">@color/ctl_theme_dark_surface</item>
+        <item name="colorOnSurface">@color/ctl_theme_dark_onSurface</item>
+        <item name="colorSurfaceVariant">@color/ctl_theme_dark_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/ctl_theme_dark_onSurfaceVariant</item>
+        <item name="colorOutline">@color/ctl_theme_dark_outline</item>
+        <item name="colorOnSurfaceInverse">@color/ctl_theme_dark_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/ctl_theme_dark_inverseSurface</item>
+        <item name="colorPrimaryInverse">@color/ctl_theme_dark_inversePrimary</item>
+        <item name="colorOutlineVariant">@color/ctl_theme_dark_outlineVariant</item>
+    </style>
+</resources>
