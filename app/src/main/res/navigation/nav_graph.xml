@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/food_explorer_fragment">
+    app:startDestination="@id/food_explorer_navigation">
 
-    <fragment
-        android:id="@+id/food_explorer_fragment"
-        android:name="janmokry.kaloricketabulkylite.feature.foodexplorer.presentation.view.FoodExplorerFragment"
-        tools:layout="@layout/fragment_food_explorer">
-
-    </fragment>
+    <include app:graph="@navigation/food_explorer_navigation" />
 
 </navigation>

@@ -4,11 +4,12 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt.gradle)
+    id("androidx.navigation.safeargs")
 }
 
 android {
     namespace = "janmokry.kaloricketabulkylite.feature.foodexplorer"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 21
@@ -50,6 +51,8 @@ dependencies {
 
     // Arch Components
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     // View
     implementation (libs.viewbindingpropertydelegate.noreflection)

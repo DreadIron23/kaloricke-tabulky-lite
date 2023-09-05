@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "janmokry.kaloricketabulkylite.test.navigation"
-    compileSdk = 33
+    compileSdk = 34
     targetProjectPath = ":app"
 
     defaultConfig {
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
 
         testInstrumentationRunner = "janmokry.kaloricketabulkylite.core.testing.HiltTestRunner"
     }

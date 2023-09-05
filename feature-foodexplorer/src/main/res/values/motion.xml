@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="food_detail_transition_name" translatable="false">food_detail_transition</string>
+    <string name="food_item_transition_name" translatable="false">food_item_%1$s</string>
+</resources>

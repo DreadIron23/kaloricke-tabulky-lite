@@ -21,6 +21,7 @@ class FoodListViewDataMapperImpl @Inject constructor() : FoodListViewDataMapper 
             FoodExplorerUiState.Success(
                 foodList.map {
                     FoodItemViewData(
+                        guid = it.guidFood,
                         name = it.name,
                         energyUnit = it.energyUnit,
                         energyValue = "${

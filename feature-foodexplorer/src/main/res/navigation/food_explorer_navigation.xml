@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/food_explorer_navigation"
+    app:startDestination="@id/food_explorer_fragment">
+
+    <fragment
+        android:id="@+id/food_explorer_fragment"
+        android:name="janmokry.kaloricketabulkylite.feature.foodexplorer.presentation.view.FoodExplorerFragment"
+        tools:layout="@layout/fragment_food_explorer">
+
+        <action
+            android:id="@+id/action_food_explorer_fragment_to_foodDetailFragment"
+            app:destination="@id/food_detail_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/food_detail_fragment"
+        android:name="janmokry.kaloricketabulkylite.feature.foodexplorer.presentation.view.FoodDetailFragment"
+        android:label="FoodDetailFragment">
+
+        <argument
+            android:name="foodDetailGuid"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

@@ -3,6 +3,7 @@ package janmokry.kaloricketabulkylite.feature.foodexplorer.presentation.view
 import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
+import androidx.core.view.doOnPreDraw
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -13,6 +14,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.search.SearchBar
 import com.google.android.material.search.SearchView
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.transition.MaterialElevationScale
 import dagger.hilt.android.AndroidEntryPoint
 import janmokry.kaloricketabulkylite.feature.foodexplorer.R
 import janmokry.kaloricketabulkylite.feature.foodexplorer.databinding.FragmentFoodExplorerBinding
@@ -28,10 +30,14 @@ class FoodExplorerFragment : Fragment(R.layout.fragment_food_explorer) {
 
     private val viewModel: FoodExplorerViewModel by viewModels()
 
-    private val foodExplorerAdapter = FoodExplorerRecyclerViewAdapter()
+    private val foodExplorerAdapter = FoodExplorerRecyclerViewAdapter {
+        binding.searchView.hide()
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        setupViewTransitions(view)
 
         with(binding.list) {
             layoutManager = LinearLayoutManager(context)
@@ -88,8 +94,10 @@ class FoodExplorerFragment : Fragment(R.layout.fragment_food_explorer) {
         val onBackPressedCallback: OnBackPressedCallback =
             object : OnBackPressedCallback(false) {
                 override fun handleOnBackPressed() {
-                    submitSearchQuery(binding.searchBar, this@with, text.toString())
-                    hide()
+                    if (isAdded) {
+                        submitSearchQuery(binding.searchBar, this@with, text.toString())
+                        hide()
+                    }
                 }
             }
         toolbar.setNavigationOnClickListener {
@@ -108,6 +116,18 @@ class FoodExplorerFragment : Fragment(R.layout.fragment_food_explorer) {
         searchView.hide()
     }
 
+    private fun setupViewTransitions(view: View) {
+        postponeEnterTransition()
+        view.doOnPreDraw { startPostponedEnterTransition() }
+
+        exitTransition = MaterialElevationScale(false).apply {
+            duration = TRANSITION_DURATION
+        }
+        reenterTransition = MaterialElevationScale(true).apply {
+            duration = TRANSITION_DURATION
+        }
+    }
+
     private fun SearchBar.startOnLoadAnimation(bundle: Bundle?) {
         // Don't start animation on rotation.
         if (bundle == null) {
@@ -115,3 +135,5 @@ class FoodExplorerFragment : Fragment(R.layout.fragment_food_explorer) {
         }
     }
 }
+
+private const val TRANSITION_DURATION = 300L
