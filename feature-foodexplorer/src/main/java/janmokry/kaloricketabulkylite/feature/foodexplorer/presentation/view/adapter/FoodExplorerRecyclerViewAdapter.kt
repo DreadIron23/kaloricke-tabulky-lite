@@ -1,4 +1,4 @@
-package janmokry.kaloricketabulkylite.feature.foodexplorer.presentation.view
+package janmokry.kaloricketabulkylite.feature.foodexplorer.presentation.view.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -12,6 +12,7 @@ import com.commit451.coiltransformations.CropTransformation
 import janmokry.kaloricketabulkylite.core.ui.dpToPx
 import janmokry.kaloricketabulkylite.feature.foodexplorer.R
 import janmokry.kaloricketabulkylite.feature.foodexplorer.databinding.FoodItemBinding
+import janmokry.kaloricketabulkylite.feature.foodexplorer.presentation.view.FoodExplorerFragmentDirections
 import janmokry.kaloricketabulkylite.feature.foodexplorer.presentation.view.viewdata.FoodItemViewData
 
 class FoodExplorerRecyclerViewAdapter(
@@ -32,7 +33,7 @@ class FoodExplorerRecyclerViewAdapter(
             FoodItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
-                false
+                false,
             )
         )
 
@@ -46,7 +47,7 @@ class FoodExplorerRecyclerViewAdapter(
             trailingBottomTextView.text = item.energyUnit
             if (item.imageThumbnailUrl.isNotBlank()) {
                 thumbnailImageView.load(item.imageThumbnailUrl) {
-                    placeholder(R.drawable.image_placeholder_56)
+                    placeholder(R.drawable.ic_image_placeholder_56)
                     transformations(
                         CropTransformation(),
                         RoundedCornersTransformation(thumbnailImageView.context.dpToPx(8))
@@ -64,8 +65,9 @@ class FoodExplorerRecyclerViewAdapter(
                     val extras = FragmentNavigatorExtras(view to endTransition)
                     view.findNavController()
                         .navigate(
-                            FoodExplorerFragmentDirections
-                                .actionFoodExplorerFragmentToFoodDetailFragment(item.guid),
+                            FoodExplorerFragmentDirections.actionFoodExplorerFragmentToFoodDetailFragment(
+                                item.guid
+                            ),
                             extras,
                         )
                 }
@@ -81,6 +83,5 @@ class FoodExplorerRecyclerViewAdapter(
         val trailingTopTextView = binding.trailingSupportingTextTop
         val trailingBottomTextView = binding.trailingSupportingTextBottom
         val thumbnailImageView = binding.imageView
-
     }
 }

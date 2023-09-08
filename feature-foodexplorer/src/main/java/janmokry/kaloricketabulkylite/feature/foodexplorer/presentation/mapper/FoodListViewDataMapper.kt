@@ -12,14 +12,12 @@ interface FoodListViewDataMapper {
 
 class FoodListViewDataMapperImpl @Inject constructor() : FoodListViewDataMapper {
 
-    override fun mapToViewData(data: FoodListData) = data.map()
-
-    private fun FoodListData.map(): FoodExplorerUiState = when(this) {
+    override fun mapToViewData(data: FoodListData) = when (data) {
         FoodListData.NotFound -> FoodExplorerUiState.NotFound
         FoodListData.Error -> FoodExplorerUiState.Error()
         is FoodListData.Data ->
             FoodExplorerUiState.Success(
-                foodList.map {
+                data.foodList.map {
                     FoodItemViewData(
                         guid = it.guidFood,
                         name = it.name,
@@ -30,6 +28,6 @@ class FoodListViewDataMapperImpl @Inject constructor() : FoodListViewDataMapper 
                         imageThumbnailUrl = it.photoThumb
                     )
                 }
-        )
+            )
     }
 }

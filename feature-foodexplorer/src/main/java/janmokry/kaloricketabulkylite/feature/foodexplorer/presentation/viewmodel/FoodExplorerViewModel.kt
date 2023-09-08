@@ -47,9 +47,9 @@ class FoodExplorerViewModel @Inject constructor(
 
 sealed interface FoodExplorerUiState {
 
-    object Loading : FoodExplorerUiState
+    data object Loading : FoodExplorerUiState
 
-    object NotFound : FoodExplorerUiState
+    data object NotFound : FoodExplorerUiState
 
     data class Error(val throwable: Throwable? = null) : FoodExplorerUiState
 

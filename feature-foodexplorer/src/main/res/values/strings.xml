@@ -3,4 +3,22 @@
     <string name="search_bar_hint">Search everything</string>
     <string name="generic_error">Oops! Something went wrong</string>
     <string name="nothing_found">Nothing found</string>
+
+    <string name="nutrition_energy">Energy</string>
+    <string name="nutrition_proteins">Proteins</string>
+    <string name="nutrition_carbohydrates">Carbohydrates</string>
+    <string name="nutrition_sugars">Sugars</string>
+    <string name="nutrition_fats">Fats</string>
+    <string name="nutrition_saturated_fatty_acids">Saturated fatty acids</string>
+    <string name="nutrition_trans_fatty_acids">Transfatty acids</string>
+    <string name="nutrition_cholesterol">Cholesterol</string>
+    <string name="nutrition_fiber">Fiber</string>
+    <string name="nutrition_sodium">Sodium</string>
+    <string name="nutrition_calcium">Calcium</string>
+    <string name="nutrition_salt">Salt</string>
+    <string name="nutrition_water">Water</string>
+    <string name="nutrition_monounsaturated">Monounsaturated fatty acids</string>
+    <string name="nutrition_polyunsaturated">Polyunsaturated fatty acids</string>
+    <string name="food_detail_multiplier_hint">Multiplier</string>
+    <string name="food_detail_quantity_picker_hint">Quantity</string>
 </resources>

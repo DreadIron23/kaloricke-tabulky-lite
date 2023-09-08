@@ -3,4 +3,22 @@
     <string name="search_bar_hint">Hľadať všetko</string>
     <string name="generic_error">Hups! Niečo sa pokazilo</string>
     <string name="nothing_found">Nič sa nenašlo</string>
+
+    <string name="nutrition_energy">Energia</string>
+    <string name="nutrition_proteins">Bielkoviny</string>
+    <string name="nutrition_carbohydrates">Sacharidy</string>
+    <string name="nutrition_sugars">Cukry</string>
+    <string name="nutrition_fats">Tuky</string>
+    <string name="nutrition_saturated_fatty_acids">Nasýtené mastné kyseliny</string>
+    <string name="nutrition_trans_fatty_acids">Transmastné kyseliny</string>
+    <string name="nutrition_cholesterol">Cholesterol</string>
+    <string name="nutrition_fiber">Vláknina</string>
+    <string name="nutrition_sodium">Sodík</string>
+    <string name="nutrition_calcium">Vápnik</string>
+    <string name="nutrition_salt">Soľ</string>
+    <string name="nutrition_water">Voda</string>
+    <string name="nutrition_monounsaturated">Mononenasýtené</string>
+    <string name="nutrition_polyunsaturated">Polynenasýtené mastné kyseliny</string>
+    <string name="food_detail_multiplier_hint">Násobiteľ</string>
+    <string name="food_detail_quantity_picker_hint">Množstvo</string>
 </resources>
